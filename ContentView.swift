@@ -24,6 +24,16 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text("Selected Color")
+                .font(.body)
+                .padding(10)
+            
+            ScrollView {
+                LazyVGrid(column: columnLayout) {
+                    ForEach(allColors, id: \.description) { color in
+                        
+                    }
+                }
+            }
         }
     }
 }
