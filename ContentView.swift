@@ -32,7 +32,12 @@ struct ContentView: View {
                     ForEach(allColors, id: \.description) { color in
                         Button {
                             selectedColor = color
+                        } label: {
+                            RoundedRectangle(cornerRadius: 4.0)
+                                .aspectRatio(1.0, contentMode: .fit)
+                                .foregroundColor(color)
                         }
+                        .buttonStyle(.plain)
                     }
                 }
             }
