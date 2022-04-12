@@ -22,13 +22,16 @@ struct ContentView: View {
     ]
     
     var body: some View {
+        
         VStack {
             Text("Selected Color")
-                .font(.body)
-                .padding(10)
+                .font(.title)
+                .fontWeight(.bold)
+                .padding()
+                .foregroundColor(selectedColor)
             
             ScrollView {
-                LazyVGrid(column: columnLayout) {
+                LazyVGrid(columns: columnLayout) {
                     ForEach(allColors, id: \.description) { color in
                         Button {
                             selectedColor = color
