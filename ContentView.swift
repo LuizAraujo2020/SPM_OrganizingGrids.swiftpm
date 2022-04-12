@@ -30,7 +30,9 @@ struct ContentView: View {
             ScrollView {
                 LazyVGrid(column: columnLayout) {
                     ForEach(allColors, id: \.description) { color in
-                        
+                        Button {
+                            selectedColor = color
+                        }
                     }
                 }
             }
